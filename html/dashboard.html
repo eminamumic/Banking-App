@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banking Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="#" class="navbar-logo">BankApp</a>
+        <div class="navbar-menu">
+          <a href="#">Home</a>
+          <a href="#features">Features</a>
+          <a href="#contact">Contact</a>
+          <a href="#logout" class="btn-primary">Log Out</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+      <div class="dashboard-container">
+        <!-- User Info Card (Bank Card Look) -->
+        <div class="bank-card">
+          <div class="card-header">
+            <h3>Welcome, John Doe</h3>
+          </div>
+          <div class="card-body">
+            <p><strong>Account Number:</strong> 1234 5678 9012 3456</p>
+            <p><strong>Balance:</strong> $10,500</p>
+          </div>
+          <div class="card-footer">
+            <p>Expiry Date: 12/25</p>
+          </div>
+        </div>
+
+        <!-- Transaction Options -->
+        <div class="transaction-options">
+          <div class="transaction-option">
+            <h4>Deposit</h4>
+            <form>
+              <input type="number" placeholder="Amount to deposit" />
+              <button type="submit" class="btn-primary">Deposit</button>
+            </form>
+          </div>
+
+          <div class="transaction-option">
+            <h4>Withdraw</h4>
+            <form>
+              <input type="number" placeholder="Amount to withdraw" />
+              <button type="submit" class="btn-primary">Withdraw</button>
+            </form>
+          </div>
+
+          <div class="transaction-option">
+            <h4>Transfer</h4>
+            <form>
+              <input type="text" placeholder="Recipient's Account" />
+              <input type="number" placeholder="Amount to transfer" />
+              <button type="submit" class="btn-primary">Transfer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <p>&copy; 2025 BankApp. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fc;
+  color: #333;
+}
+
+.navbar {
+  background-color: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #4c6ef5;
+  text-decoration: none;
+}
+
+.navbar-menu a {
+  margin: 0 1rem;
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar-menu .btn-primary {
+  background-color: #4c6ef5;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Dashboard section */
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  background-color: #f4f7fc;
+  padding: 3rem 0;
+}
+
+.dashboard-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bank-card {
+  background: linear-gradient(135deg, #2a69ac, #4c6ef5);
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 220px;
+}
+
+.card-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.card-body p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.card-footer p {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.transaction-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.transaction-option {
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 30%;
+}
+
+.transaction-option h4 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #4c6ef5;
+  margin-bottom: 1rem;
+}
+
+.transaction-option form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.transaction-option input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.transaction-option button {
+  background-color: #4c6ef5;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.transaction-option button:hover {
+  background-color: #2c4da4;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #4c6ef5;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
