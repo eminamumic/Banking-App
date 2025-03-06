@@ -1,5 +1,6 @@
 import { Validator } from './validator.js'
 import { Storage } from './storage.js'
+import { User } from './user.js'
 
 const firstNameSignUp = document.querySelector('#first-name-sign-up')
 const lastNameSignUp = document.querySelector('#last-name-sign-up')
@@ -111,16 +112,16 @@ btnSignUp.addEventListener('click', (event) => {
     Validator.isAccountNumberUnique(accountNumberSignUpValue)
   ) {
     // Kreirajte objekat sa svim podacima
-    const newAccount = {
-      firstName: firstNameSignUpValue,
-      lastName: lastNameSignUpValue,
-      email: emailSignUpValue,
-      password: passwordSignUpValue,
-      accountNumber: accountNumberSignUpValue,
-      accountType: accountTypeSignUpValue,
-      balance: parseFloat(accountBalanceSignUpValue),
-      isActive: true, // Postavite da je račun aktivan
-    }
+    const newUser = new User(
+      firstNameSignUpValue,
+      lastNameSignUpValue,
+      accountNumberSignUpValue,
+      accountTypeSignUpValue,
+      accountBalanceSignUpValue,
+      emailSignUpValue,
+      passwordSignUpValue
+    )
+
     firstNameSignUp.value = ''
     lastNameSignUp.value = ''
     emailSignUp.value = ''
@@ -133,7 +134,7 @@ btnSignUp.addEventListener('click', (event) => {
     const accounts = Storage.getStoredAccounts()
 
     // Dodajte novi račun u postojeće
-    accounts.push(newAccount)
+    accounts.push(newUser)
 
     // Spremite ažurirane račune u localStorage
     localStorage.setItem('accounts', JSON.stringify(accounts))
