@@ -113,3 +113,14 @@ body {
   text-align: center;
   padding: 1rem;
 }
+.error-message {
+  background-color: #f8d7da; /* Svijetlocrvena pozadina */
+  color: #721c24; /* Tamnocrvena boja teksta */
+  border: 1px solid #f5c6cb; /* Svijetlocrveni okvir */
+  padding: 10px 15px; /* Unutrašnji razmak */
+  border-radius: 5px; /* Zaobljeni kutovi */
+  font-size: 16px; /* Veličina fonta */
+  margin: 10px 0; /* Razmak između poruka */
+  display: flex;
+  align-items: center; /* Poravnavanje teksta */
+}

@@ -25,28 +25,28 @@
       <div class="login-container">
         <h2>Log In to Your Account</h2>
         <form action="/login" class="login-form">
-          <div class="form-group">
-            <label for="email">Email Address</label>
+          <div id="email-log-in-div" class="form-group">
+            <label for="email-log-in">Email Address</label>
             <input
               type="email"
-              id="email"
+              id="email-log-in"
               name="email"
               placeholder="Enter your email"
-              required
             />
           </div>
-          <div class="form-group">
-            <label for="password">Password</label>
+          <div id="password-log-in-div" class="form-group">
+            <label for="password-log-in">Password</label>
             <input
               type="password"
-              id="password"
+              id="password-log-in"
               name="password"
               placeholder="Enter your password"
-              required
             />
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn-primary">Log In</button>
+            <button id="btn-log-in" type="submit" class="btn-primary">
+              Log In
+            </button>
           </div>
         </form>
       </div>
@@ -58,5 +58,6 @@
         <p>&copy; 2025 BankApp. All rights reserved.</p>
       </div>
     </footer>
+    <script type="module" src="/js/logIn.js"></script>
   </body>
 </html>
