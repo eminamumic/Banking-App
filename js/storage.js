@@ -18,4 +18,18 @@ export class Storage {
   static saveCurrentUserAccount(user) {
     localStorage.setItem('currentUser', JSON.stringify(user))
   }
+
+  static updateStoredUserAccount(updatedUser) {
+    let accounts = this.getStoredAccounts()
+
+    const userIndex = accounts.findIndex(
+      (account) => account.accountNumber === updatedUser.accountNumber
+    )
+
+    if (userIndex !== -1) {
+      // Pravilna provjera
+      accounts[userIndex] = updatedUser
+      localStorage.setItem('accounts', JSON.stringify(accounts)) // Ažuriranje localStorage
+    }
+  }
 }

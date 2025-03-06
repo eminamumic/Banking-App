@@ -1,5 +1,6 @@
 // dashboard.js
 import { User } from './user.js'
+import { Storage } from './storage.js'
 
 const currentUserData = JSON.parse(localStorage.getItem('currentUser'))
 const currentUser = new User(
@@ -15,6 +16,7 @@ const depositBtn = document.querySelector('#deposit-btn')
 const depositAmount = document.querySelector('#deposit-amount')
 const withdrawtBtn = document.querySelector('#withdraw-btn')
 const withdrawAmount = document.querySelector('#withdraw-amount')
+const logOutBtn = document.querySelector('#log-out-dashboard')
 
 window.onload = function () {
   // Učitaj korisničke podatke iz localStorage
@@ -40,7 +42,8 @@ depositBtn.addEventListener('click', (event) => {
   let depositAmountValue = parseFloat(depositAmount.value) // Konvertuj string u broj
   if (!isNaN(depositAmountValue) && depositAmountValue > 0) {
     currentUser.deposit(depositAmountValue)
-    localStorage.setItem('currentUser', JSON.stringify(currentUser)) // Sačuvaj novi balans
+    localStorage.setItem('currentUser', JSON.stringify(currentUser))
+    Storage.updateStoredUserAccount(currentUser) // Sačuvaj novi balans
     document.querySelector(
       '#user-balance'
     ).textContent = `Balance: ${currentUser.accountBalance}$`
@@ -52,10 +55,12 @@ depositBtn.addEventListener('click', (event) => {
 
 withdrawtBtn.addEventListener('click', (event) => {
   event.preventDefault()
-  let withdrawAmountValue = parseFloat(withdrawAmount.value) // Konvertuj string u broj
+
+  let withdrawAmountValue = parseFloat(withdrawAmount.value)
   if (!isNaN(withdrawAmountValue) && withdrawAmountValue > 0) {
     currentUser.withdraw(withdrawAmountValue)
-    localStorage.setItem('currentUser', JSON.stringify(currentUser)) // Sačuvaj novi balans
+    localStorage.setItem('currentUser', JSON.stringify(currentUser))
+    Storage.updateStoredUserAccount(currentUser)
     document.querySelector(
       '#user-balance'
     ).textContent = `Balance: ${currentUser.accountBalance}$`
@@ -63,4 +68,10 @@ withdrawtBtn.addEventListener('click', (event) => {
   } else {
     alert('Invalid deposit amount')
   }
+})
+
+logOutBtn.addEventListener('click', (event) => {
+  event.preventDefault()
+  localStorage.removeItem('currentUser')
+  window.location.href = 'landing.html'
 })
