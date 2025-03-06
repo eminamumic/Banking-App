@@ -74,7 +74,8 @@ body {
   margin-bottom: 8px;
 }
 
-.input-group input {
+.input-group input,
+.input-group select {
   width: 100%;
   padding: 12px;
   font-size: 1rem;
@@ -83,9 +84,23 @@ body {
   transition: border-color 0.3s ease;
 }
 
-.input-group input:focus {
+.input-group input:focus,
+.input-group select:focus {
   border-color: #4c6ef5;
   outline: none;
+}
+
+/* Style specifically for <select> dropdown */
+.input-group select {
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px; /* Space for the dropdown arrow */
+}
+
+.input-group select:focus {
+  border-color: #4c6ef5;
 }
 
 .button-group {
