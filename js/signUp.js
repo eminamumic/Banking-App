@@ -130,14 +130,8 @@ btnSignUp.addEventListener('click', (event) => {
     accountTypeSignUp.value = ''
     accountBalanceSignUp.value = ''
 
-    // Dohvatite postojeće račune iz localStorage
-    const accounts = Storage.getStoredAccounts()
+    Storage.saveUserAccount(newUser)
 
-    // Dodajte novi račun u postojeće
-    accounts.push(newUser)
-
-    // Spremite ažurirane račune u localStorage
-    localStorage.setItem('accounts', JSON.stringify(accounts))
     alert('Uspjesna registracija')
   }
 })

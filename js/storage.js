@@ -8,4 +8,10 @@ export class Storage {
       return []
     }
   }
+
+  static saveUserAccount(newUser) {
+    let accounts = this.getStoredAccounts()
+    accounts.push(newUser)
+    localStorage.setItem('accounts', JSON.stringify(accounts))
+  }
 }

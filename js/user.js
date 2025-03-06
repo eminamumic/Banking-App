@@ -6,6 +6,8 @@ export class User {
   accountBalance
   email
   password
+  transactionHistory
+  isActiv
 
   constructor(
     firstName,
@@ -23,5 +25,7 @@ export class User {
       (this.accountBalance = accountBalance),
       (this.email = email),
       (this.password = password)
+    this.isActiv = true
+    this.transactionHistory = []
   }
 }
