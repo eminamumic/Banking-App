@@ -131,7 +131,9 @@ btnSignUp.addEventListener('click', (event) => {
     accountBalanceSignUp.value = ''
 
     Storage.saveUserAccount(newUser)
+    Storage.saveCurrentUserAccount(newUser)
 
-    alert('Uspjesna registracija')
+    // Preusmeravanje na dashboard.html
+    window.location.href = 'dashboard.html'
   }
 })

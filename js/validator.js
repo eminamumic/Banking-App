@@ -166,18 +166,6 @@ export class Validator {
   }
 
   // Ova funkcija provjerava da li je saldo na računu dovoljan za transakciju
-  static hasSufficientBalance(account, amount) {
-    try {
-      if (account.balance >= amount) {
-        return true
-      } else {
-        throw new Error('Insufficient funds for this transaction.')
-      }
-    } catch (error) {
-      console.error('Error:', error.message)
-      return false
-    }
-  }
 
   // Ova funkcija provjerava da li je račun "checking" tipa
   static isAccountChecking(account) {

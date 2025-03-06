@@ -1,4 +1,5 @@
 import { Validator } from './validator.js'
+import { Storage } from './storage.js'
 
 const emailLogIn = document.querySelector('#email-log-in')
 const emailLogInDiv = document.querySelector('#email-log-in-div')
@@ -38,18 +39,9 @@ btnLogIn.addEventListener('click', (event) => {
   passwordLogIn.value = ''
 
   if (account && account.password === passwordLogInValue) {
-    /* localStorage.setItem('loggedInUser', JSON.stringify(account))
+    Storage.saveCurrentUserAccount(account)
+
+    // Preusmeravanje na dashboard.html
     window.location.href = 'dashboard.html'
-
-    document.addEventListener('DOMContentLoaded', () => {
-      let loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
-
-      if (!loggedInUser) {
-        // Ako nema prijavljenog korisnika, vrati na login stranicu
-        window.location.href = 'login.html'
-        return
-      }*/
-
-    alert('Uspjesno logovanje')
   }
 })

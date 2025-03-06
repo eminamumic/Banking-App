@@ -14,4 +14,8 @@ export class Storage {
     accounts.push(newUser)
     localStorage.setItem('accounts', JSON.stringify(accounts))
   }
+
+  static saveCurrentUserAccount(user) {
+    localStorage.setItem('currentUser', JSON.stringify(user))
+  }
 }
